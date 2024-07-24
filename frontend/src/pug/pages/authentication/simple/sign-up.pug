@@ -1,0 +1,102 @@
+extends ../../../layouts/LayoutTheme
+include ../../../layouts/LayoutSimpleAuth
+
+block wrapperContent
+  +LayoutBasic
+    .text-center.mb-7
+      h3.text-body-highlight Inscrivez-vous
+      p.text-body-tertiary Créez votre compte maintenant
+    form#preRegistrationForm(method="POST" action="/pre-registration" enctype="multipart/form-data")
+      input(type='hidden', name='_token', value=csrfToken)
+
+      .mb-3.text-start
+        label.form-label(for='fullName') Nom et prénom *
+        input#fullName.form-control(type='text' name='name' placeholder='Nom et prénom' required="required")
+
+      .mb-3.text-start
+        label.form-label(for='phoneNumber') Numéro de téléphone *
+        input#phoneNumber.form-control(type='text' name='phone' placeholder='Numéro de téléphone' required="required")
+
+      .mb-3.text-start
+        label.form-label(for='email') Adresse Mail *
+        input#email.form-control(type='email' name='email' placeholder='name@example.com' required="required")
+
+      .mb-3.text-start
+        label.form-label(for='password') Mot de passe *
+        input#password.form-control(type='password' name='password' placeholder='Mot de passe' required="required")
+
+      .mb-3.text-start
+        label.form-label(for='position') Le poste / Département / Service *
+        input#position.form-control(type='text' name='position' placeholder='Poste / Département / Service' required="required")
+
+      .mb-3.text-start
+        label.form-label(for='companyName') Nom de l’entreprise *
+        input#companyName.form-control(type='text' name='company_name' placeholder='Nom de l’entreprise' required="required")
+
+      .mb-3.text-start
+        label.form-label(for='legalForm') Forme juridique *
+        input#legalForm.form-control(type='text' name='legal_form' placeholder='Forme juridique' required="required")
+
+      .mb-3.text-start
+        label.form-label Coeur de métier: *
+        .form-check
+          input#fournisseur.form-check-input(type='radio' name='core_business' value='Fournisseur' required="required")
+          label.form-check-label(for='fournisseur') Fournisseur
+        .form-check
+          input#client.form-check-input(type='radio' name='core_business' value='Client' required="required")
+          label.form-check-label(for='client') Client
+
+      .mb-3.text-start
+        label.form-label(for='parentCompany') Filiale ou maison mère *
+        input#parentCompany.form-control(type='text' name='parent_company' placeholder='Filiale ou maison mère' required="required")
+
+      .mb-3.text-start
+        label.form-label Pays : Local ou étranger *
+        .form-check
+          input#local.form-check-input(type='radio' name='country' value='Local' required="required")
+          label.form-check-label(for='local') Local
+        .form-check
+          input#etranger.form-check-input(type='radio' name='country' value='Étranger' required="required")
+          label.form-check-label(for='etranger') Étranger
+
+      .mb-3.text-start
+        label.form-label(for='registrationNumber') Numéro RC *
+        input#registrationNumber.form-control(type='text' name='registration_number' placeholder='Numéro RC' required="required")
+        input#rcFile.form-control(type='file' name='rc_file')
+
+      .mb-3.text-start
+        label.form-label(for='taxId') NIF
+        input#taxId.form-control(type='text' name='tax_id' placeholder='NIF' required="required")
+        input#taxIdFile.form-control(type='file' name='tax_id_file')
+
+      .mb-3.text-start
+        label.form-label(for='website') Site web
+        input#website.form-control(type='text' name='website' placeholder='Site web')
+
+      .mb-3.text-start
+        label.form-label(for='address') Adresse postale *
+        input#address.form-control(type='text' name='address' placeholder='Adresse postale' required="required")
+
+      .mb-3.text-start
+        label.form-label(for='activityCode') Code d’activité
+        input#activityCode.form-control(type='text' name='activity_code' placeholder='Code d’activité')
+
+      .mb-3.text-start
+        label.form-label(for='companyLogo') Insérer le logo de la société
+        input#companyLogo.form-control(type='file' name='company_logo')
+
+      .form-check.mb-3
+        input#termsService.form-check-input(type='checkbox' name='accept_terms' required="required")
+        label.form-label.fs-9.text-transform-none(for='termsService')
+          | J’accepte les 
+          a(href='#!') termes 
+          | et 
+          a(href='#!') conditions d’utilisation
+
+      button.btn.btn-primary.w-100.mb-3 S'inscrire
+      .text-center
+        a.fs-9.fw-bold(href=`${CWD}${paths['simple-signin']}`) Se Connecter avec un compte existant
+
+    // Inclure le fichier JavaScript avec les routes
+    script(src='/js/routes.js')
+    script(src='/js/form-handling.js')

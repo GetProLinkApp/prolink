@@ -1,0 +1,4 @@
+{
+  "preRegistrationRoute": "/pre-registration",
+  "simpleSignIn": "/simple-signin"
+}
