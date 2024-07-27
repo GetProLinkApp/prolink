@@ -5,7 +5,7 @@ const { name, version, dependencies } = require('../package.json');
 
 const isIterableArray = array => Array.isArray(array) && !!array.length;
 const isProd = process.env.MODE === 'PROD';
-const baseDir = isProd ? paths.dir.prod : paths.dir.dev;
+const baseDir = 'public';
 
 module.exports = {
   name,

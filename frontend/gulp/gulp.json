@@ -4,9 +4,9 @@
     "dev": "public",
     "prod": "build"
   },
-  "style": {
-    "src": "src/scss/**/*.scss",
-    "dest": "assets/css"
+  "style": { 
+    "src": "public/assets/scss/**/*.scss",
+    "dest": "public/assets/css"
   },
   "script": {
     "src": [
