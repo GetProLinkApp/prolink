@@ -1151,6 +1151,10 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
+  appearance: none; /* Valeur standard */
+  -webkit-appearance: none; /* Préfixe pour Chrome, Safari, Opera */
+  -moz-appearance: none; /* Préfixe pour Firefox */
+  -ms-appearance: none; /* Préfixe pour Internet Explorer */
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -1208,6 +1212,10 @@ legend + * {
 
 [type=search] {
   -webkit-appearance: textfield;
+  appearance: none; /* Valeur standard */
+  -webkit-appearance: none; /* Préfixe pour Chrome, Safari, Opera */
+  -moz-appearance: none; /* Préfixe pour Firefox */
+  -ms-appearance: none; /* Préfixe pour Internet Explorer */
   outline-offset: -2px;
 }
 
@@ -1228,6 +1236,10 @@ legend + * {
 ::file-selector-button {
   font: inherit;
   -webkit-appearance: button;
+  appearance: none; /* Valeur standard */
+  -webkit-appearance: none; /* Préfixe pour Chrome, Safari, Opera */
+  -moz-appearance: none; /* Préfixe pour Firefox */
+  -ms-appearance: none; /* Préfixe pour Internet Explorer */
 }
 
 output {
@@ -22980,6 +22992,9 @@ samp {
 
 [type=search] {
   -webkit-appearance: none;
+  appearance: none; /* Valeur standard */
+  -moz-appearance: none; /* Préfixe pour Firefox */
+  -ms-appearance: none; /* Préfixe pour Internet Explorer */
 }
 
 .min-h-auto {
@@ -27083,11 +27098,13 @@ h3,
 |   Line Clamp
 -----------------------------------------------*/
 .line-clamp-1 {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: -webkit-box;           /* Nécessaire pour la mise en page en boîte flexible */
+  -webkit-line-clamp: 1;          /* Limite le texte à une ligne */
+  -webkit-box-orient: vertical;  /* Orientation verticale pour les boîtes flexibles */
+  overflow: hidden;               /* Cache le texte qui dépasse */
+  text-overflow: ellipsis;        /* Affiche les points de suspension */
 }
+
 
 .line-clamp-2 {
   display: -webkit-box;
@@ -34642,9 +34659,9 @@ a[href].bg-body-secondary:hover, a[href].bg-body-secondary:focus {
 }
 
 .feed-profile-cover {
-  background-image: -webkit-gradient(linear, right top, right bottom, from(rgba(245, 246, 252, 0.52)), to(rgba(117, 19, 93, 0.73))), url("src/assets/img/generic/59.png");
-  background-image: -o-linear-gradient(top, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url("src/assets/img/generic/59.png");
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url("src/assets/img/generic/59.png");
+  background-image: -webkit-gradient(linear, right top, right bottom, from(rgba(245, 246, 252, 0.52)), to(rgba(117, 19, 93, 0.73))), url("../img/generic/59.png");
+  background-image: -o-linear-gradient(top, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url("../img/generic/59.png");
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url("../img/generic/59.png");
 }
 
 /*-----------------------------------------------

@@ -74,7 +74,7 @@
               <p class="text-body-tertiary">Créez votre compte maintenant</p>
             </div>
             <form id="preRegistrationForm" method="POST" action="/pre-registration" enctype="multipart/form-data">
-              <input type="hidden" name="_token" />
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="mb-3 text-start">
                 <label class="form-label" for="fullName">Nom et prénom *</label>
                 <input class="form-control" id="fullName" type="text" name="name" placeholder="Nom et prénom" required="required" />
@@ -164,7 +164,7 @@
             </form>
             <!-- Inclure le fichier JavaScript avec les routes-->
             <script src="/js/routes.js"></script>
-            <script src="/js/form-handling.js"></script>
+            
           </div>
         </div>
       </div>
@@ -363,12 +363,11 @@
     <script src="../../../vendors/is/is.min.js"></script>
     <script src="../../../vendors/fontawesome/all.min.js"></script>
     <script src="../../../vendors/lodash/lodash.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js"></script>
     <script src="../../../vendors/list.js/list.min.js"></script>
     <script src="../../../vendors/feather-icons/feather.min.js"></script>
     <script src="../../../vendors/dayjs/dayjs.min.js"></script>
     <script src="../../../assets/js/phoenix.js"></script>
-    <script src="../../../js/form-handling.js"> </script>
 
   </body>
 
