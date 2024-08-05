@@ -1,5 +1,6 @@
 // Header.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -35,9 +36,9 @@ const Header = () => {
           </div>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item border-bottom border-translucent border-bottom-lg-0"><a className="nav-link lh-1 py-0 fs-9 fw-bold py-3" aria-current="page" href="#">Accueil</a></li>
-            <li className="nav-item border-bottom border-translucent border-bottom-lg-0"><a className="nav-link lh-1 py-0 fs-9 fw-bold py-3" href="#feature">Features</a></li>
-            <li className="nav-item border-bottom border-translucent border-bottom-lg-0"><a className="nav-link lh-1 py-0 fs-9 fw-bold py-3" href="#blog">Blog</a></li>
-            <li className="nav-item"><a className="nav-link lh-1 py-0 fs-9 fw-bold py-3" href="#team">Team</a></li>
+            <li className="nav-item border-bottom border-translucent border-bottom-lg-0"><a className="nav-link lh-1 py-0 fs-9 fw-bold py-3" href="#feature">Qui Sommes Nous</a></li>
+            <li className="nav-item border-bottom border-translucent border-bottom-lg-0"><a className="nav-link lh-1 py-0 fs-9 fw-bold py-3" href="#blog">Nos Services</a></li>
+            <li className="nav-item"><a className="nav-link lh-1 py-0 fs-9 fw-bold py-3" href="#team">Contact</a></li>
           </ul>
           <div className="d-grid d-lg-flex align-items-center">
             <div className="nav-item d-flex align-items-center d-none d-lg-block pe-2">
@@ -54,10 +55,10 @@ const Header = () => {
             <a className="text-body-quaternary text-body-tertiary-hover px-2 d-none d-lg-inline lh-sm" href="#" data-bs-toggle="modal" data-bs-target="#searchBoxModal">
               <span data-feather="search" style={{ height: '20px', width: '20px' }}></span>
             </a>
-            <a className="btn btn-link text-body order-1 order-lg-0 ps-4 me-lg-2" href="../../pages/authentication/simple/sign-in.html">Sign in</a>
-            <a className="btn btn-phoenix-primary order-0" href="../../pages/authentication/simple/sign-up.html">
+            <a className="btn btn-link text-body order-1 order-lg-0 ps-4 me-lg-2" href="../../pages/authentication/simple/sign-in.html">Se Connecter</a>
+            <Link className="btn btn-phoenix-primary order-0" to="/signup">
               <span className="fw-bold">S'inscrire</span>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

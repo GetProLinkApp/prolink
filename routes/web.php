@@ -1,19 +1,26 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use Inertia\Inertia;
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route pour le formulaire d'inscription
-Route::post('/pre-registration', [AuthController::class, 'preRegister'])->name('pre-registration');
+Route::post('/register', [RegisteredUserController::class, 'register']);
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
