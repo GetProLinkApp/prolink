@@ -5,7 +5,7 @@ const FeatureSection = () => {
     {
       title: 'Lightning Speed',
       description: 'Present everything you need in one place within minutes! Grow with Phoenix!',
-      icon: 'path/to/bolt.png'
+      icon: '../../assets/img/icons/illustrations/bolt.png'
     },
     {
       title: 'All-in-one solution',
@@ -52,8 +52,8 @@ const FeatureSection = () => {
           </div>
           <div className="row mt-12 align-items-center justify-content-between text-center text-lg-start mb-6 mb-lg-0">
             <div className="col-lg-5">
-              <img className="feature-image img-fluid mb-9 mb-lg-0 d-dark-none" src="path/to/22_2.png" alt="" />
-              <img className="feature-image img-fluid mb-9 mb-lg-0 d-light-none" src="path/to/dark_22.png" alt="" />
+              <img className="feature-image img-fluid mb-9 mb-lg-0 d-dark-none" src="../../assets/img/spot-illustrations/22_2.png" alt="" />
+              <img className="feature-image img-fluid mb-9 mb-lg-0 d-light-none" src="../../assets/img/spot-illustrations/dark_22.png" alt="" />
             </div>
             <div className="col-lg-6">
               <h6 className="text-primary mb-2 ls-2">SIGNAL</h6>
@@ -64,8 +64,8 @@ const FeatureSection = () => {
           </div>
           <div className="row mt-2 align-items-center justify-content-between text-center text-lg-start mb-6 mb-lg-0">
             <div className="col-lg-5 order-0 order-lg-1">
-              <img className="feature-image img-fluid mb-9 mb-lg-0 d-dark-none" src="path/to/23_2.png" height="394" alt="" />
-              <img className="feature-image img-fluid mb-9 mb-lg-0 d-light-none" src="path/to/dark_23.png" height="394" alt="" />
+              <img className="feature-image img-fluid mb-9 mb-lg-0 d-dark-none" src="../../assets/img/spot-illustrations/23_2.png" height="394" alt="" />
+              <img className="feature-image img-fluid mb-9 mb-lg-0 d-light-none" src="../../assets/img/spot-illustrations/dark_23.png" height="394" alt="" />
             </div>
             <div className="col-lg-6">
               <h6 className="text-primary mb-2 ls-2">REVENUE</h6>

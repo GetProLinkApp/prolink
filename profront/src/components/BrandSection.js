@@ -2,14 +2,14 @@ import React from 'react';
 
 const BrandSection = () => {
   const brands = [
-    { src: 'path/to/netflix-n.png', alt: 'Netflix' },
-    { src: 'path/to/blender.png', alt: 'Blender' },
-    { src: 'path/to/upwork.png', alt: 'Upwork' },
-    { src: 'path/to/facebook-f.png', alt: 'Facebook' },
-    { src: 'path/to/pocket.png', alt: 'Pocket' },
-    { src: 'path/to/mail-bluster-1.png', alt: 'Mail Bluster' },
-    { src: 'path/to/discord.png', alt: 'Discord' },
-    { src: 'path/to/google-g.png', alt: 'Google' }
+    { src: '../assets/img/brand2/netflix-n.png', alt: 'Netflix' },
+    { src: '../assets/img/brand2/blender.png', alt: 'Blender' },
+    { src: '../assets/img/brand2/upwork.png', alt: 'Upwork' },
+    { src: '../assets/img/brand2/facebook-f.png', alt: 'Facebook' },
+    { src: '../assets/img/brand2/pocket.png', alt: 'Pocket' },
+    { src: '../assets/img/brand2/mail-bluster-1.png', alt: 'Mail Bluster' },
+    { src: '../assets/img/brand2/discord.png', alt: 'Discord' },
+    { src: '../assets/img/brand2/google-g.png', alt: 'Google' }
   ];
 
   return (

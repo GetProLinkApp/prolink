@@ -1,75 +1,45 @@
-// SignUp.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// signup.js
 
-const SignUp = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    password: '',
-    // Ajoutez les autres champs si nécessaire
-  });
+import React, { useState } from 'react';
+import { register } from '../js/api';
 
-  const [csrfToken, setCsrfToken] = useState('');
+const Signup = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  useEffect(() => {
-    const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
-    if (token) {
-      setCsrfToken(token);
-    }
-  }, []);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const config = {
-      headers: {
-        'X-CSRF-TOKEN': csrfToken,
-        'Content-Type': 'application/json',
-      },
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = {
+      name,
+      email,
+      password,
     };
 
-    try {
-      const response = await axios.post('http://localhost:8000/register', formData, config);
-      console.log('Success:', response.data);
-      // Gérer la réponse réussie, par exemple, rediriger vers une autre page
-    } catch (error) {
-      console.error('Error:', error.response?.data);
-      // Gérer les erreurs, par exemple, afficher les erreurs de validation
-    }
+    register(data)
+      .then((response) => {
+        console.log(response.data);
+        // Redirection vers la page de connexion ou autre action
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Nom et prénom</label>
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-      </div>
-      <div>
-        <label htmlFor="phone">Numéro de téléphone</label>
-        <input type="text" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-      </div>
-      <div>
-        <label htmlFor="email">Adresse Mail</label>
-        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-      </div>
-      <div>
-        <label htmlFor="password">Mot de passe</label>
-        <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required />
-      </div>
-      {/* Ajoutez d'autres champs si nécessaire */}
+      <label>Nom :</label>
+      <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+      <br />
+      <label>Email :</label>
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <br />
+      <label>Mot de passe :</label>
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <br />
       <button type="submit">S'inscrire</button>
     </form>
   );
 };
 
-export default SignUp;
+export default Signup;

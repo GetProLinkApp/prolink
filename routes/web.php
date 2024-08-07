@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::post('/register', [RegisteredUserController::class, 'register']);
+Route::post('/register', 'AuthController@store')->middleware('csrf');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
